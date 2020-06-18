@@ -1,0 +1,20 @@
+﻿<catel:Window x:Class="CatelAutocompletionRepro.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatelAutocompletionRepro"
+        xmlns:catel="http://schemas.catelproject.com"
+        xmlns:xamlbehaviors="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox Height="28" Width="200">
+            <xamlbehaviors:Interaction.Behaviors>
+                <catel:AutoCompletion ItemsSource="{Binding FilterSource}" 
+                                      UseAutoCompletionService="True"
+                                      PropertyName="{Binding PropertyName}"/>
+            </xamlbehaviors:Interaction.Behaviors>
+        </TextBox>
+    </Grid>
+</catel:Window>
